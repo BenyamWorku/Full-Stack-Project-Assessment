@@ -27,11 +27,14 @@ function App() {
   }
 
   function searchCollection(searchInput) {
-    setVideos(videos.filter((item)=>item.title.toLowerCase().includes(searchInput)));
+    setVideos(videos.filter((video) => video.title.toLowerCase().includes(searchInput)));
+    /* 1. have a separate videos list that are filtered out and the entire video repertoire
+      2. define searchInput state here and filter on VideoCard component  
+    */
   }
 
   function deleteVideo(videoId) {
-    setVideos(videos.filter((item)=>item.url.split("=")[1] !== videoId ))
+    setVideos(videos.filter((video)=>video.url.split("=")[1] !== videoId ))
   }
 
   console.log(videos);
@@ -41,8 +44,9 @@ function App() {
         <h1>Video Recommendation</h1>
       
       </header>
+      <div className=" m-4">
       <Search callbackSearch={searchCollection} />
-    
+      </div>
       <Addvideo  callbackAdd={updateCollection}/>
       <div className="d-flex">
          {videos && videos.map((video) => {

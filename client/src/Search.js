@@ -6,7 +6,7 @@ export default function Search({ callbackSearch }) {
     setSearchInput(e.target.value.toLowerCase())
     }
     return (
-        <div className="input-group">
+        <div className="  input-group">
             <div className="form-outline">
                 <input onChange={ handleChange} type="search" id="searchform"
                     className="form-control" />
